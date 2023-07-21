@@ -3,7 +3,7 @@ process FASTP {
     publishDir params.outdir
 
     input:
-    set val(name), file(reads1), file(reads2)
+    val(name), path(reads1), file(reads2)
 
     output:
     tuple val(name), file("${name}.R1.trimmed.fastq"), file("${name}.R2.trimmed.fastq"), emit: sample_trimmed
