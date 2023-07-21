@@ -3,15 +3,15 @@ process FASTP {
     publishDir params.outdir
 
     input:
-    tuple val(name), path(reads)
+    set val(name), file(reads1), file(reads2)
 
     output:
-    tuple val(name), path("${name}*.trimmed.fastq"), emit: sample_trimmed
-    path "${name}_fastp.json", emit: report_fastp_json
-    path "${name}_fastp.html", emit: report_fastp_html
+    tuple val(name), file("${name}.R1.trimmed.fastq"), file("${name}.R2.trimmed.fastq"), emit: sample_trimmed
+    file "${name}_fastp.json", emit: report_fastp_json
+    file "${name}_fastp.html", emit: report_fastp_html
 
     script:
     """
-    fastp -i ${reads[0]} -o ${name}.R1.trimmed.fastq -O ${name}.R2.trimmed.fastq --detect_adapter_for_pe --json ${name}_fastp.json --html ${name}_fastp.html --thread ${params.threads}
+    fastp -i ${reads1} -I ${reads2} -o ${name}.R1.trimmed.fastq -O ${name}.R2.trimmed.fastq --detect_adapter_for_pe --json ${name}_fastp.json --html ${name}_fastp.html --thread ${params.threads}
     """
 }
