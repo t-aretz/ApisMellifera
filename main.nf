@@ -10,9 +10,10 @@ log.info """\
          """
          .stripIndent()
 
+
 workflow {
 
-    Channel.fromFilePairs(params.reads, checkIfExists: true).set( readsCH )
+    Channel.fromFilePairs(params.reads, checkIfExists: true).set{ read_pairs_unsplit_ch }
 
-	FASTP( readsCH )
+	FASTP( read_pairs_unsplit_ch )
 }
