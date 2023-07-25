@@ -13,6 +13,10 @@ log.info """\
 
 workflow {
 
-    Channel.fromPath(params.reads1, params.reads2) | FASTP
+    Channel.fromPath(params.reads1, checkIfExists: true).set{ reads1 }
+	Channel.fromPath(params.reads2, checkIfExists: true).set{ reads2 }
+
+	FASTP( reads1 )
+	FASTP( reads2 )
 
 }
