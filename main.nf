@@ -14,5 +14,5 @@ workflow {
 
     Channel.fromFilePairs(params.reads, checkIfExists: true).set( readsCH )
 
-	FASTP(readsCH)
+	FASTP( readsCH )
 }
