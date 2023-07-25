@@ -1,7 +1,6 @@
 process FASTP {
     label 'fastp'
     publishDir params.outdir
-    tag "$label"
 
     input:
     tuple val(name), path(reads)
