@@ -13,6 +13,14 @@ log.info """\
 
 workflow {
 
-    Channel.fromFilePairs(params.reads1, params.reads2) | FASTP
+    // Create channels for read 1 and read 2 files
+    val read1_ch = Channel.fromFilePairs(params.reads1, checkIfExists: true)
+    val read2_ch = Channel.fromFilePairs(params.reads2, checkIfExists: true)
+
+    // Combine read 1 and read 2 channels using 'merge' or 'combine' function
+    val combined_reads = read1_ch.combine(read2_ch)
+
+    // Pipe the combined channels to the FASTP process
+    combined_reads | FASTP
 
 }
