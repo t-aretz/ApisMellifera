@@ -5,7 +5,8 @@ include { FASTP } from './modules/fastp.nf'
 log.info """\
          RNAseq fastp analysis using NextFlow 
          =============================
-         reads : ${params.reads}
+         reads1 : ${params.reads1}
+		 reads2 : ${params.reads2}
          outdir: ${params.outdir}
          """
          .stripIndent()
