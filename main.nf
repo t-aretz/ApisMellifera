@@ -14,6 +14,7 @@ workflow {
 
     def readsCH = Channel.fromPath(params.reads, checkIfExists: true)
 
-	FASTP( readsCH )
-
+	each file in readsCH{
+		FASTP( file )
+	}
 }
