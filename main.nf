@@ -12,7 +12,7 @@ log.info """\
 
 workflow {
 
-    def readsCH = Channel.fromPath(params.reads, checkIfExists: true)
+    def readsCH = Channel.fromFilePairs(params.reads, checkIfExists: true)
 
 	FASTP(readsCH)
 }
