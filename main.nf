@@ -18,5 +18,5 @@ workflow {
 
     Channel.fromFilePairs(params.reads, checkIfExists: true).set{ read_pairs_unsplit_ch }
 
-    FASTP( read_pairs_unsplit_ch )
+    Channel.of( 'task1' , 'task2') | FASTP( read_pairs_unsplit_ch )
 }
