@@ -1,5 +1,5 @@
 process FASTP {
-    tag ${name}
+    tag "$name"
     publishDir params.outdir
 
     input:
