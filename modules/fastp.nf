@@ -1,5 +1,5 @@
 process FASTP {
-    label 'fastp'
+    tag $name
     publishDir params.outdir
 
     input:
