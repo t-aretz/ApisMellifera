@@ -19,5 +19,5 @@ workflow {
 	FASTP( read_pairs_unsplit_ch )
 
     STAR_INDEX_REFERENCE( params.reference_genome, params.reference_annotation )
-    STAR_ALIGN( read_pairs_ch, STAR_INDEX_REFERENCE.out, params.reference_annotation )
+    STAR_ALIGN( read_pairs_unsplit_ch, STAR_INDEX_REFERENCE.out, params.reference_annotation )
 }
