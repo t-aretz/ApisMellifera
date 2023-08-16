@@ -4,7 +4,7 @@ process FASTP {
     publishDir params.outdir
 
     input:
-    tuple val(name), path(reads), taskList from taskChannel
+    tuple val(name), path(reads), val(tasks)
 
     output:
     tuple val(name), path("${name}*.trimmed.fastq"), emit: sample_trimmed
