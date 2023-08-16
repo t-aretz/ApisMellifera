@@ -1,0 +1,21 @@
+Aug.-16 11:01:03.736 [main] DEBUG nextflow.cli.Launcher - $> nextflow kuberun t-aretz/ApisMellifera -r main -c config/nextflow_kube.config -v 'pvctristan:/data'
+Aug.-16 11:01:03.793 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/tristanaretz/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.3
+Aug.-16 11:01:03.798 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug.-16 11:01:03.798 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug.-16 11:01:03.799 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Aug.-16 11:01:03.805 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug.-16 11:01:03.810 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /Users/tristanaretz/.nextflow/scm
+Aug.-16 11:01:03.820 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Aug.-16 11:01:03.823 [main] DEBUG nextflow.scm.RepositoryProvider - Request [credentials -:-] -> https://api.github.com/repos/t-aretz/ApisMellifera/contents/nextflow.config
+Aug.-16 11:01:04.145 [main] DEBUG nextflow.scm.RepositoryProvider - Response status: 404 -- {"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/contents#get-repository-content"}
+Aug.-16 11:01:04.147 [main] DEBUG nextflow.scm.RepositoryProvider - Request [credentials -:-] -> https://api.github.com/repos/t-aretz/ApisMellifera
+Aug.-16 11:01:04.333 [main] DEBUG nextflow.scm.AssetManager - Cannot retrieve remote config file -- likely it does not exist
+Aug.-16 11:01:04.339 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/tristanaretz/Desktop/ReinertLab_Job/HoneyBee/ApisMellifera/ApisMellifera/config/nextflow_kube.config
+Aug.-16 11:01:04.339 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/tristanaretz/Desktop/ReinertLab_Job/HoneyBee/ApisMellifera/ApisMellifera/config/nextflow_kube.config
+Aug.-16 11:01:04.356 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Aug.-16 11:01:04.684 [main] DEBUG nextflow.k8s.K8sConfig - Kubernetes workDir=/data/tristanaretz/work; projectDir=/data/projects; volumeClaims=[pvctristan]
+Aug.-16 11:01:04.821 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /Users/tristanaretz/.nextflow/scm
+Aug.-16 11:01:04.970 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Created K8s configMap with name: nf-config-379fa380
+Aug.-16 11:01:04.988 [main] INFO  nextflow.k8s.K8sDriverLauncher - Launcher pod spec file: .nextflow.pod.yaml
+Aug.-16 11:02:04.586 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Wait for pod termination name=shrivelled-noyce
+Aug.-16 11:02:04.933 [main] DEBUG nextflow.k8s.K8sDriverLauncher - Deleted K8s configMap with name: nf-config-379fa380
