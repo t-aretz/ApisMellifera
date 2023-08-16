@@ -15,6 +15,8 @@ workflow {
 
     Channel.fromFilePairs(params.reads, checkIfExists: true).set{ read_pairs_unsplit_ch }
 
-    FASTP( read_pairs_unsplit_ch )
+    def num = [1,2,3]
+
+    FASTP(num, read_pairs_unsplit_ch )
 
 }
