@@ -18,8 +18,7 @@ workflow {
     stringChannel = Channel.of(["string1", "string2", "string3"])
 
     combinedChannel = stringChannel.concat(read_pairs_unsplit_ch)
+
+    println("Hello")
     combinedChannel.view()
-
-    FASTP(combinedChannel )
-
 }
