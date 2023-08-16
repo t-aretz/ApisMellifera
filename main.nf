@@ -18,7 +18,7 @@ workflow {
     stringChannel = Channel.of([["task1", "task2", "task3"]])
 
     combinedChannel = read_pairs_unsplit_ch.combine(stringChannel)
-
-    println("Hello")
     combinedChannel.view()
+
+    FASTP( combinedChannel )
 }
