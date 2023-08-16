@@ -15,9 +15,9 @@ workflow {
 
     Channel.fromFilePairs(params.reads, checkIfExists: true).set{ read_pairs_unsplit_ch }
 
-    stringChannel = Channel.of([["string1", "string2", "string3"]])
+    stringChannel = Channel.of([["task1", "task2", "task3"]])
 
-    combinedChannel = stringChannel.combine(read_pairs_unsplit_ch)
+    combinedChannel = read_pairs_unsplit_ch.combine(stringChannel)
 
     println("Hello")
     combinedChannel.view()
