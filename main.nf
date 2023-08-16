@@ -15,7 +15,7 @@ workflow {
 
     Channel.fromFilePairs(params.reads, checkIfExists: true).set{ read_pairs_unsplit_ch }
 
-    stringChannel = Channel.of(["string1", "string2", "string3"])
+    stringChannel = Channel.of([["string1", "string2", "string3"]])
 
     combinedChannel = stringChannel.combine(read_pairs_unsplit_ch)
 
