@@ -7,7 +7,7 @@ process FASTP {
     tuple val(name), path(reads), val(tasks)
 
     output:
-    tuple val(name), path("${name}*.trimmed.fastq") emit: sample_trimmed
+    tuple val(name), path("${name}*.trimmed.fastq"),emit: sample_trimmed
     path "${name}_fastp.json", emit: report_fastp_json
     path "${name}_fastp.html", emit: report_fastp_html
 
