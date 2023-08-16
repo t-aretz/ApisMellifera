@@ -1,7 +1,6 @@
 nextflow.enable.dsl = 2
 
 include { FASTP } from './modules/fastp.nf'
-include { STAR_INDEX_REFERENCE ; STAR_ALIGN } from './modules/star.nf'
 
 log.info """\
          RNAseq fastp analysis using NextFlow 
