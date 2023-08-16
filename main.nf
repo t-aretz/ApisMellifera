@@ -20,6 +20,6 @@ workflow {
     combinedChannel = stringChannel.combine(read_pairs_unsplit_ch)
     combinedChannel.view()
 
-    FASTP(num, read_pairs_unsplit_ch )
+    FASTP(combinedChannel )
 
 }
