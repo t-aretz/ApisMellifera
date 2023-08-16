@@ -1,5 +1,5 @@
 process FASTP {
-    tag "$tasks.id"
+    tag "$tasks"
     label 'fastp'
     publishDir params.outdir
 
@@ -13,7 +13,7 @@ process FASTP {
 
     script:
     """
-    echo $tasks.id
+    echo $tasks
     fastp -i ${reads} -o ${name}.R1.trimmed.fastq --detect_adapter_for_pe --json ${name}_fastp.json --html ${name}_fastp.html --thread ${params.threads}
     """
 }
